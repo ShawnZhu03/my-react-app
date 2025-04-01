@@ -6,6 +6,9 @@ export default function Board() {
 
 
   function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = "X";
@@ -15,7 +18,7 @@ export default function Board() {
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   }
-  
+
   return (
     <>
       <div className="board-row">
